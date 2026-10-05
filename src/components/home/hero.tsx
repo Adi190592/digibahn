@@ -5,10 +5,23 @@ import { RevealLines, Reveal } from "@/components/motion/reveal";
 
 export function Hero() {
   return (
-    <section className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden pt-24">
-      {/* Ambient intelligence network */}
-      <IntelligenceField className="pointer-events-none absolute inset-0 h-full w-full text-ink/70 opacity-[0.9]" />
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-paper via-paper/30 to-paper" />
+    <section className="relative isolate flex min-h-[100svh] flex-col justify-center overflow-hidden pt-24">
+      {/* Ambient intelligence network — confined to the right, faded behind the text */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-y-0 right-0 hidden w-[62%] md:block lg:w-[55%]"
+        style={{
+          WebkitMaskImage: "linear-gradient(to right, transparent 0%, #000 42%, #000 100%)",
+          maskImage: "linear-gradient(to right, transparent 0%, #000 42%, #000 100%)",
+        }}
+      >
+        <IntelligenceField className="h-full w-full text-ink/60 opacity-70" />
+      </div>
+      {/* Legibility scrim over the text column */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-paper from-35% via-paper/80 to-transparent"
+      />
 
       <div className="shell relative">
         <Reveal>

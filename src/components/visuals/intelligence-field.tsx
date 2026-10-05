@@ -75,10 +75,10 @@ export function IntelligenceField({ className = "" }: { className?: string }) {
               <motion.path
                 d={d}
                 stroke="#4C6FFF"
-                strokeWidth={1.25}
+                strokeWidth={1}
                 strokeLinecap="round"
                 initial={{ pathLength: 0, opacity: 0 }}
-                animate={{ pathLength: [0, 1, 1, 0], opacity: [0, 0.8, 0.8, 0] }}
+                animate={{ pathLength: [0, 1, 1, 0], opacity: [0, 0.32, 0.32, 0] }}
                 transition={{
                   duration: 6,
                   times: [0, 0.3, 0.7, 1],
@@ -100,24 +100,24 @@ export function IntelligenceField({ className = "" }: { className?: string }) {
             <motion.circle
               cx={n.x}
               cy={n.y}
-              r={28}
+              r={22}
               fill={`url(#glow-${gid})`}
-              initial={{ opacity: 0.15 }}
-              animate={{ opacity: [0.15, 0.5, 0.15] }}
+              initial={{ opacity: 0.1 }}
+              animate={{ opacity: [0.1, 0.3, 0.1] }}
               transition={{ duration: 4, delay: i * 0.4, repeat: Infinity, ease: "easeInOut" }}
             />
           )}
-          <circle cx={n.x} cy={n.y} r={4} fill="#4C6FFF" />
-          <circle cx={n.x} cy={n.y} r={9} stroke="currentColor" strokeOpacity={0.25} />
+          <circle cx={n.x} cy={n.y} r={3.5} fill="#4C6FFF" fillOpacity={0.8} />
+          <circle cx={n.x} cy={n.y} r={9} stroke="currentColor" strokeOpacity={0.18} />
           <text
             x={n.x}
             y={n.y + 30}
             textAnchor="middle"
             className="font-mono"
-            fontSize="12"
+            fontSize="11"
             letterSpacing="1.5"
             fill="currentColor"
-            fillOpacity={0.45}
+            fillOpacity={0.26}
           >
             {n.label}
           </text>
